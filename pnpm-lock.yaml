@@ -3,10 +3,12 @@ lockfileVersion: 5.3
 specifiers:
   elm: ^0.19.1-5
   elm-format: ^0.8.5
+  prettier: ^2.6.2
 
 devDependencies:
   elm: 0.19.1-5
   elm-format: 0.8.5
+  prettier: 2.6.2
 
 packages:
 
@@ -281,6 +283,12 @@ packages:
 
   /performance-now/2.1.0:
     resolution: {integrity: sha1-Ywn04OX6kT7BxpMHrjZLSzd8nns=}
+    dev: true
+
+  /prettier/2.6.2:
+    resolution: {integrity: sha512-PkUpF+qoXTqhOeWL9fu7As8LXsIUZ1WYaJiY/a7McAQzxjk82OF0tibkFXVCDImZtWxbvojFjerkiLb0/q8mew==}
+    engines: {node: '>=10.13.0'}
+    hasBin: true
     dev: true
 
   /psl/1.8.0:
