@@ -11880,6 +11880,12 @@ var $author$project$Button$buttonDocs = A2(
 				}))
 		]),
 	$dtwrks$elm_book$ElmBook$Chapter$chapter('Button'));
+var $dtwrks$elm_book$ElmBook$ThemeOptions$routePrefix = F2(
+	function (routePrefix_, options) {
+		return _Utils_update(
+			options,
+			{routePrefix: routePrefix_});
+	});
 var $dtwrks$elm_book$ElmBook$Internal$Msg$OnUrlChange = function (a) {
 	return {$: 'OnUrlChange', a: a};
 };
@@ -28061,11 +28067,31 @@ var $dtwrks$elm_book$ElmBook$withChapters = function (chapters) {
 				_Utils_Tuple2('', chapters)
 			]));
 };
+var $dtwrks$elm_book$ElmBook$Internal$Helpers$applyAttributes = F2(
+	function (fns, a) {
+		return A3($elm$core$List$foldl, $elm$core$Basics$apL, a, fns);
+	});
+var $dtwrks$elm_book$ElmBook$withThemeOptions = F2(
+	function (themeAttributes, _v0) {
+		var config = _v0.a;
+		return $dtwrks$elm_book$ElmBook$Internal$Book$BookBuilder(
+			_Utils_update(
+				config,
+				{
+					themeOptions: A2($dtwrks$elm_book$ElmBook$Internal$Helpers$applyAttributes, themeAttributes, config.themeOptions)
+				}));
+	});
 var $author$project$Book$main = A2(
 	$dtwrks$elm_book$ElmBook$withChapters,
 	_List_fromArray(
 		[$author$project$Button$buttonDocs]),
-	$dtwrks$elm_book_interop_elm_ui$ElmBook$ElmUI$book('FrameOak UI'));
+	A2(
+		$dtwrks$elm_book$ElmBook$withThemeOptions,
+		_List_fromArray(
+			[
+				$dtwrks$elm_book$ElmBook$ThemeOptions$routePrefix('/frameoak-ui')
+			]),
+		$dtwrks$elm_book_interop_elm_ui$ElmBook$ElmUI$book('FrameOak UI')));
 _Platform_export({'Book':{'init':$author$project$Book$main(
 	$elm$json$Json$Decode$succeed(_Utils_Tuple0))(0)}});}(this));
 
