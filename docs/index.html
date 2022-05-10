@@ -11802,6 +11802,21 @@ var $author$project$Oak$Button$outlined = $author$project$Internal$Button$Type($
 var $dtwrks$elm_book$ElmBook$Internal$Chapter$Chapter = function (a) {
 	return {$: 'Chapter', a: a};
 };
+var $dtwrks$elm_book$ElmBook$Chapter$render = F2(
+	function (body, _v0) {
+		var builder = _v0.a;
+		return $dtwrks$elm_book$ElmBook$Internal$Chapter$Chapter(
+			_Utils_update(
+				builder,
+				{
+					body: _Utils_ap(builder.body, body)
+				}));
+	});
+var $author$project$Internal$Button$Solid = {$: 'Solid'};
+var $author$project$Oak$Button$solid = $author$project$Internal$Button$Type($author$project$Internal$Button$Solid);
+var $mdgriffith$elm_ui$Element$text = function (content) {
+	return $mdgriffith$elm_ui$Internal$Model$Text(content);
+};
 var $dtwrks$elm_book$ElmBook$Internal$Chapter$ChapterComponentViewStateless = function (a) {
 	return {$: 'ChapterComponentViewStateless', a: a};
 };
@@ -11813,73 +11828,70 @@ var $dtwrks$elm_book$ElmBook$Chapter$fromTuple = function (_v0) {
 		view: $dtwrks$elm_book$ElmBook$Internal$Chapter$ChapterComponentViewStateless(view_)
 	};
 };
-var $dtwrks$elm_book$ElmBook$Chapter$renderComponentList = F2(
+var $dtwrks$elm_book$ElmBook$Chapter$withComponentList = F2(
 	function (componentList, _v0) {
 		var builder = _v0.a;
-		return $dtwrks$elm_book$ElmBook$Internal$Chapter$Chapter(
+		return $dtwrks$elm_book$ElmBook$Internal$Chapter$ChapterBuilder(
 			_Utils_update(
 				builder,
 				{
-					body: builder.body + '<component-list />',
 					componentList: _Utils_ap(
 						A2($elm$core$List$map, $dtwrks$elm_book$ElmBook$Chapter$fromTuple, componentList),
 						builder.componentList)
 				}));
 	});
-var $author$project$Internal$Button$Solid = {$: 'Solid'};
-var $author$project$Oak$Button$solid = $author$project$Internal$Button$Type($author$project$Internal$Button$Solid);
-var $mdgriffith$elm_ui$Element$text = function (content) {
-	return $mdgriffith$elm_ui$Internal$Model$Text(content);
-};
 var $author$project$Button$buttonDocs = A2(
-	$dtwrks$elm_book$ElmBook$Chapter$renderComponentList,
-	_List_fromArray(
-		[
-			_Utils_Tuple2(
-			'Default',
-			A2(
-				$author$project$Oak$Theme$Default$button,
-				_List_Nil,
-				{
-					label: $mdgriffith$elm_ui$Element$text('Button is Outlined by default'),
-					onPress: $elm$core$Maybe$Just(
-						$dtwrks$elm_book$ElmBook$Actions$logAction('Default clicked'))
-				})),
-			_Utils_Tuple2(
-			'Solid',
-			A2(
-				$author$project$Oak$Theme$Default$button,
-				_List_fromArray(
-					[$author$project$Oak$Button$solid]),
-				{
-					label: $mdgriffith$elm_ui$Element$text('Solid'),
-					onPress: $elm$core$Maybe$Just(
-						$dtwrks$elm_book$ElmBook$Actions$logAction('Solid clicked'))
-				})),
-			_Utils_Tuple2(
-			'Outlined',
-			A2(
-				$author$project$Oak$Theme$Default$button,
-				_List_fromArray(
-					[$author$project$Oak$Button$outlined]),
-				{
-					label: $mdgriffith$elm_ui$Element$text('Outlined'),
-					onPress: $elm$core$Maybe$Just(
-						$dtwrks$elm_book$ElmBook$Actions$logAction('Outlined clicked'))
-				})),
-			_Utils_Tuple2(
-			'Borderless',
-			A2(
-				$author$project$Oak$Theme$Default$button,
-				_List_fromArray(
-					[$author$project$Oak$Button$borderless]),
-				{
-					label: $mdgriffith$elm_ui$Element$text('Borderless'),
-					onPress: $elm$core$Maybe$Just(
-						$dtwrks$elm_book$ElmBook$Actions$logAction('Borderless clicked'))
-				}))
-		]),
-	$dtwrks$elm_book$ElmBook$Chapter$chapter('Button'));
+	$dtwrks$elm_book$ElmBook$Chapter$render,
+	'\r\n```\r\nimport Element exposing (..)\r\nimport Oak.Button\r\nimport Oak.Theme.Default as OakUi\r\n```\r\n<component with-label="Default" />\r\n```\r\nOakUi.button []\r\n    { label = text "Button is Outlined by default"\r\n    , onPress = Just (logAction "Default clicked")\r\n    }\r\n```\r\n<component with-label="Solid" />\r\n```\r\nOakUi.button [ Oak.Button.solid ]\r\n    { label = text "Solid"\r\n    , onPress = Just (logAction "Solid clicked")\r\n    }\r\n```\r\n<component with-label="Outlined" />\r\n```\r\nOakUi.Default.button [ Oak.Button.outlined ]\r\n    { label = text "Outlined"\r\n    , onPress = Just (logAction "Outlined clicked")\r\n    }\r\n```\r\n<component with-label="Borderless" />\r\n```\r\nOakUi.button [ Oak.Button.borderless ]\r\n    { label = text "Borderless"\r\n    , onPress = Just (logAction "Borderless clicked")\r\n    }\r\n```\r\n',
+	A2(
+		$dtwrks$elm_book$ElmBook$Chapter$withComponentList,
+		_List_fromArray(
+			[
+				_Utils_Tuple2(
+				'Default',
+				A2(
+					$author$project$Oak$Theme$Default$button,
+					_List_Nil,
+					{
+						label: $mdgriffith$elm_ui$Element$text('Button is Outlined by default'),
+						onPress: $elm$core$Maybe$Just(
+							$dtwrks$elm_book$ElmBook$Actions$logAction('Default clicked'))
+					})),
+				_Utils_Tuple2(
+				'Solid',
+				A2(
+					$author$project$Oak$Theme$Default$button,
+					_List_fromArray(
+						[$author$project$Oak$Button$solid]),
+					{
+						label: $mdgriffith$elm_ui$Element$text('Solid'),
+						onPress: $elm$core$Maybe$Just(
+							$dtwrks$elm_book$ElmBook$Actions$logAction('Solid clicked'))
+					})),
+				_Utils_Tuple2(
+				'Outlined',
+				A2(
+					$author$project$Oak$Theme$Default$button,
+					_List_fromArray(
+						[$author$project$Oak$Button$outlined]),
+					{
+						label: $mdgriffith$elm_ui$Element$text('Outlined'),
+						onPress: $elm$core$Maybe$Just(
+							$dtwrks$elm_book$ElmBook$Actions$logAction('Outlined clicked'))
+					})),
+				_Utils_Tuple2(
+				'Borderless',
+				A2(
+					$author$project$Oak$Theme$Default$button,
+					_List_fromArray(
+						[$author$project$Oak$Button$borderless]),
+					{
+						label: $mdgriffith$elm_ui$Element$text('Borderless'),
+						onPress: $elm$core$Maybe$Just(
+							$dtwrks$elm_book$ElmBook$Actions$logAction('Borderless clicked'))
+					}))
+			]),
+		$dtwrks$elm_book$ElmBook$Chapter$chapter('Button')));
 var $dtwrks$elm_book$ElmBook$ThemeOptions$routePrefix = F2(
 	function (routePrefix_, options) {
 		return _Utils_update(
