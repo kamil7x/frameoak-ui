@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "elm-live ./src/Book.elm --port 3000 --pushstate",
-    "build": "elm make ./src/Book.elm --output=../docs/index.html",
+    "build": "elm make ./src/Book.elm --output=./dist/index.html",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
