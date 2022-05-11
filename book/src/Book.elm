@@ -9,5 +9,4 @@ import ElmBook.ThemeOptions exposing (routePrefix)
 main : Book ()
 main =
     book "FrameOak UI"
-        |> withThemeOptions [ routePrefix "/frameoak-ui" ]
         |> withChapters [ buttonDocs ]
